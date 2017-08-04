@@ -10,6 +10,7 @@
 
 #include <openssl/md5.h>
 #include <openssl/sha.h>
+#include <openssl/md4.h>
 
 const uint_least32_t Crc32Table[256] = {
     0x00000000, 0x77073096, 0xEE0E612C, 0x990951BA,
@@ -114,6 +115,9 @@ void ThreadCalcHash::run(){
     if (_hashAlgorithm==HASH_ALGORITHM::Crc32){
         hash = QString::fromStdString(getCrc32FromFile(_filename.toStdString()));
     }
+    if (_hashAlgorithm==HASH_ALGORITHM::Md4){
+        hash = QString::fromStdString(getMD4FromFile(_filename.toStdString()));
+    }
     if (_hashAlgorithm==HASH_ALGORITHM::Md5){
         hash = QString::fromStdString(getMD5FromFile(_filename.toStdString()));
     }
@@ -217,6 +221,45 @@ std::string ThreadCalcHash::getCrc32FromFile(const std::string &filename){
     delete[] buf;
 
     ss << std::hex << std::setw(2) << std::setfill('0') << (crc ^ 0xFFFFFFFF);
+    return ss.str();
+}
+
+
+std::string ThreadCalcHash::getMD4FromFile(const std::string &filename){
+    unsigned char buffer_md4[MD4_DIGEST_LENGTH];
+    MD4_CTX mdContext;
+    std::stringstream ss;
+
+    std::ifstream file(filename, std::ios_base::binary);
+    if (file){
+        int countRead=0;
+        uint64_t allRead=0;
+
+        file.seekg(0, std::ios_base::end);
+        uint64_t nFileLen = file.tellg();
+        file.seekg (0, std::ios::beg);
+
+        uint64_t lengthBuffer=1*1024*1024;
+        char * buffer = new char [lengthBuffer+1];
+
+        MD4_Init (&mdContext);
+        while((countRead = file.readsome(buffer,lengthBuffer))>0){
+            if (file){
+                allRead+=countRead;
+                MD4_Update (&mdContext, buffer,countRead);
+                emit changeValue(allRead*100/nFileLen);
+            }
+        }
+        MD4_Final (buffer_md4,&mdContext);
+        delete[] buffer;
+
+        for(int i = 0; i < MD4_DIGEST_LENGTH; i++){
+            ss << std::hex << std::setw(2) << std::setfill('0') << (int)buffer_md4[i];
+        }
+
+        file.close();
+    }
+
     return ss.str();
 }
 

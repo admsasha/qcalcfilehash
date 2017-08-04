@@ -6,6 +6,7 @@
 enum class HASH_ALGORITHM : int {
     Crc8,
     Crc32,
+    Md4,
     Md5,
     Sha1,
     Sha224,
@@ -30,6 +31,7 @@ class ThreadCalcHash : public QThread {
 
         std::string getCrc8FromFile(const std::string &filename);
         std::string getCrc32FromFile(const std::string &filename);
+        std::string getMD4FromFile(const std::string &filename);
         std::string getMD5FromFile(const std::string &filename);
         std::string getSHA1FromFile(const std::string &filename);
         std::string getSHA224FromFile(const std::string &filename);

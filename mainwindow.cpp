@@ -23,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->comboBox->addItem("CRC-8",(int)HASH_ALGORITHM::Crc8);
     ui->comboBox->addItem("CRC-32",(int)HASH_ALGORITHM::Crc32);
+    ui->comboBox->addItem("MD4",(int)HASH_ALGORITHM::Md4);
     ui->comboBox->addItem("MD5",(int)HASH_ALGORITHM::Md5);
     ui->comboBox->addItem("SHA-1",(int)HASH_ALGORITHM::Sha1);
     ui->comboBox->addItem("SHA-224",(int)HASH_ALGORITHM::Sha224);
