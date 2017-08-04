@@ -9,7 +9,7 @@ DESTDIR = Bin
 
 QT += widgets
 
-#win32:RC_FILE = QCalcFileHash.rc
+win32:RC_FILE = QCalcFileHash.rc
 
 CONFIG(debug, release|debug){
     MOC_DIR = .build/debug
