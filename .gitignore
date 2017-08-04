@@ -1,0 +1,13 @@
+/.build/
+/Bin/
+/0000/
+/release/
+/debug/
+/Makefile
+/Makefile.Debug
+/Makefile.Release
+/QCalcFileHash.pro.user
+/.qmake.stash
+
+
+
