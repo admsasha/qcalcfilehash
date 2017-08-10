@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->setWindowTitle("QCalcFileHash v1.0.0 (04.08.2017)");
+    this->setWindowTitle("QCalcFileHash v1.0.1 (10.08.2017)");
     this->setFixedSize(this->width(),this->height());
 
     connect(ui->pushButton,SIGNAL(clicked(bool)),this,SLOT(close()));

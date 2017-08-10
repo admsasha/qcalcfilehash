@@ -109,32 +109,35 @@ void ThreadCalcHash::run(){
 
     emit changeValue(0);
 
+
+    std::string filename = _filename.toLocal8Bit().toStdString();
+
     if (_hashAlgorithm==HASH_ALGORITHM::Crc8){
-        hash = QString::fromStdString(getCrc8FromFile(_filename.toStdString()));
+        hash = QString::fromStdString(getCrc8FromFile(filename));
     }
     if (_hashAlgorithm==HASH_ALGORITHM::Crc32){
-        hash = QString::fromStdString(getCrc32FromFile(_filename.toStdString()));
+        hash = QString::fromStdString(getCrc32FromFile(filename));
     }
     if (_hashAlgorithm==HASH_ALGORITHM::Md4){
-        hash = QString::fromStdString(getMD4FromFile(_filename.toStdString()));
+        hash = QString::fromStdString(getMD4FromFile(filename));
     }
     if (_hashAlgorithm==HASH_ALGORITHM::Md5){
-        hash = QString::fromStdString(getMD5FromFile(_filename.toStdString()));
+        hash = QString::fromStdString(getMD5FromFile(filename));
     }
     if (_hashAlgorithm==HASH_ALGORITHM::Sha1){
-        hash = QString::fromStdString(getSHA1FromFile(_filename.toStdString()));
+        hash = QString::fromStdString(getSHA1FromFile(filename));
     }
     if (_hashAlgorithm==HASH_ALGORITHM::Sha224){
-        hash = QString::fromStdString(getSHA224FromFile(_filename.toStdString()));
+        hash = QString::fromStdString(getSHA224FromFile(filename));
     }
     if (_hashAlgorithm==HASH_ALGORITHM::Sha256){
-        hash = QString::fromStdString(getSHA256FromFile(_filename.toStdString()));
+        hash = QString::fromStdString(getSHA256FromFile(filename));
     }
     if (_hashAlgorithm==HASH_ALGORITHM::Sha384){
-        hash = QString::fromStdString(getSHA384FromFile(_filename.toStdString()));
+        hash = QString::fromStdString(getSHA384FromFile(filename));
     }
     if (_hashAlgorithm==HASH_ALGORITHM::Sha512){
-        hash = QString::fromStdString(getSHA512FromFile(_filename.toStdString()));
+        hash = QString::fromStdString(getSHA512FromFile(filename));
     }
 
     emit result(hash.toUpper());
