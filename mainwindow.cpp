@@ -6,6 +6,7 @@
 #include <QDateTime>
 
 #include "ThreadCalcHash.h"
+#include "version.h"
 
 #include <QDebug>
 
@@ -14,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->setWindowTitle("QCalcFileHash v1.0.1 (10.08.2017)");
+    this->setWindowTitle("QCalcFileHash v"+QString(VERSION)+" (29.04.2018)");
     this->setFixedSize(this->width(),this->height());
 
     connect(ui->pushButton,SIGNAL(clicked(bool)),this,SLOT(close()));
@@ -43,7 +44,7 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::openfile(){
-    QString fileName = QFileDialog::getOpenFileName(this,tr("Open file"), "", tr("All Files (*.*)"));
+    QString fileName = QFileDialog::getOpenFileName(this,tr("Open file"), "", tr("All Files (*)"));
     if (fileName.size() <= 0) return;
 
     ui->label->setText(fileName);

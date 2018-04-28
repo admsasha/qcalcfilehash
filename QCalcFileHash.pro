@@ -43,11 +43,14 @@ TRANSLATIONS = qcalcfilehash_en.ts \
 # Input
 SOURCES += main.cpp \
     mainwindow.cpp \
-    ThreadCalcHash.cpp
+    ThreadCalcHash.cpp \
+    ObjectConsole.cpp
 
 FORMS += \
     mainwindow.ui
 
 HEADERS += \
     mainwindow.h \
-    ThreadCalcHash.h
+    ThreadCalcHash.h \
+    version.h \
+    ObjectConsole.h
