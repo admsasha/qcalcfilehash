@@ -19,7 +19,7 @@ void ObjectConsole::calcHash(QStringList listPositionalArguments,bool showProgre
     }
 
     if (listPositionalArguments.size()!=2){
-        qDebug() << tr("Invalid positional arguments");
+        qCritical("%s",qUtf8Printable(tr("Invalid positional arguments")));
         exit(0);
     }
 
@@ -49,11 +49,11 @@ void ObjectConsole::calcHash(QStringList listPositionalArguments,bool showProgre
     }else if (hashAlgorithm=="SHA-512"){
         hash=HASH_ALGORITHM::Sha512;
     }else{
-        qDebug() << tr("Invalid hash argument");
+        qCritical("%s",qUtf8Printable(tr("Invalid hash argument")));
         exit(0);
     }
 
-    std::cout << tr("Filename: ").toStdString() << filename.toStdString() << std::endl;
+    qInfo(qUtf8Printable(tr("Filename: %s")),qUtf8Printable(filename));
 
     ThreadCalcHash *thCaclHash = new ThreadCalcHash();
     thCaclHash->setFilename(filename);
@@ -72,7 +72,7 @@ void ObjectConsole::calcHashChangeValue(int value){
 
     std::cout << "\033[0G";
 
-    std::cout << "calc: [";
+    std::cout << "Calc: [";
     for (int i=0;i<proc;i++) std::cout << "#" ;
     for (int i=0;i<10-proc;i++) std::cout << " " ;
     std::cout << "] " << value << "% " << std::flush;
@@ -83,6 +83,7 @@ void ObjectConsole::calcHashChangeValue(int value){
 void ObjectConsole::calcHashResult(QString hash){
     if (_showProgress) std::cout << std::endl;
 
-    qDebug() << "result: " << hash;
+    qInfo(qUtf8Printable(tr("Result: %s")),qUtf8Printable(hash));
+
     exit(0);
 }
