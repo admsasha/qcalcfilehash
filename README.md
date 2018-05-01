@@ -1,6 +1,8 @@
 # README #
 Calculator hash (SHA1, SHA-224, SHA-256, SHA-384, SHA-512, MD5, CRC32, CRC8)
 
+The utility has the same console interface. Type qcalcfilehash --help, for reference.
+
 ![QCalcFileHash images](http://dansoft.krasnokamensk.ru/data/1018/qcalcfilehash.png)
 
 
