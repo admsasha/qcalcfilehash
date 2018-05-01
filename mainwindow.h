@@ -27,6 +27,10 @@ class MainWindow : public QMainWindow {
 
         void calcHashChangeValue(int value);
         void calcHashResult(QString hash);
+
+        void changeShowCompareForm();
+        void resultCompare();
+
 };
 
 #endif // MAINWINDOW_H

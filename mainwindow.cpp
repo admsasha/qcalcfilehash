@@ -15,12 +15,17 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->setWindowTitle("QCalcFileHash v"+QString(VERSION)+" (29.04.2018)");
+    this->setWindowTitle("QCalcFileHash v"+QString(VERSION)+" ("+QString(DATE_BUILD)+")");
     this->setFixedSize(this->width(),this->height());
+
+    changeShowCompareForm();
+    ui->label_6->setText("");
 
     connect(ui->pushButton,SIGNAL(clicked(bool)),this,SLOT(close()));
     connect(ui->pushButton_2,SIGNAL(clicked(bool)),this,SLOT(openfile()));
     connect(ui->pushButton_3,SIGNAL(clicked(bool)),this,SLOT(calcHash()));
+    connect(ui->pushButton_4,SIGNAL(clicked(bool)),this,SLOT(changeShowCompareForm()));
+    connect(ui->lineEdit,SIGNAL(textChanged(QString)),this,SLOT(resultCompare()));
 
     ui->comboBox->addItem("CRC-8",(int)HASH_ALGORITHM::Crc8);
     ui->comboBox->addItem("CRC-32",(int)HASH_ALGORITHM::Crc32);
@@ -61,11 +66,34 @@ void MainWindow::calcHashResult(QString hash) {
     ui->progressBar->setValue(0);
     ui->progressBar->setEnabled(false);
     ui->pushButton_3->setEnabled(true);
+
+    resultCompare();
+}
+
+void MainWindow::changeShowCompareForm(){
+    if (ui->pushButton_4->isChecked()){
+        this->setFixedHeight(292);
+        ui->label_6->setVisible(true);
+        ui->label_5->setVisible(true);
+        ui->lineEdit->setVisible(true);
+
+        ui->pushButton->move(ui->pushButton->x(),260);
+        ui->pushButton_4->move(ui->pushButton_4->x(),260);
+        ui->label_4->move(ui->label_4->x(),270);
+    }else{
+        this->setFixedHeight(222);
+        ui->label_6->setVisible(false);
+        ui->label_5->setVisible(false);
+        ui->lineEdit->setVisible(false);
+
+        ui->pushButton->move(ui->pushButton->x(),190);
+        ui->pushButton_4->move(ui->pushButton_4->x(),190);
+        ui->label_4->move(ui->label_4->x(),200);
+    }
 }
 
 
 void MainWindow::calcHash(){
-
     ui->progressBar->setValue(0);
     ui->progressBar->setEnabled(true);
     ui->textEdit->setText("");
@@ -80,6 +108,13 @@ void MainWindow::calcHash(){
     connect(thCaclHash,SIGNAL(result(QString)),this,SLOT(calcHashResult(QString)));
 
     thCaclHash->start();
+}
 
 
+void MainWindow::resultCompare(){
+    if (ui->textEdit->toPlainText().toUpper()==ui->lineEdit->text().toUpper()){
+        ui->label_6->setText(tr("equally"));
+    }else{
+        ui->label_6->setText(tr("different"));
+    }
 }

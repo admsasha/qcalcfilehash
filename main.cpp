@@ -34,6 +34,7 @@ int main(int argc, char *argv[]){
     bool showProgress=false;
     bool showlistOption=false;
     QStringList listPositionalArguments;
+    QString compareHash="";
 
     {
         QCoreApplication app(argc, argv);
@@ -49,6 +50,12 @@ int main(int argc, char *argv[]){
         parser.addPositionalArgument("filename", QCoreApplication::tr("Source file to hash."));
         parser.addPositionalArgument("hash", QCoreApplication::tr("Hash algorithm."));
 
+        QCommandLineOption CompareHash(QStringList() << "compare",
+                QCoreApplication::translate("main", "hash comparison"),
+                QCoreApplication::translate("main", "hash"));
+        parser.addOption(CompareHash);
+
+
         QCommandLineOption showProgressOption("p", QCoreApplication::tr("Show progress"));
         parser.addOption(showProgressOption);
 
@@ -60,6 +67,8 @@ int main(int argc, char *argv[]){
         listPositionalArguments = parser.positionalArguments();
         showProgress = parser.isSet(showProgressOption);
         showlistOption = parser.isSet(listOption);
+        compareHash = parser.value(CompareHash);
+
     }
 
     if (listPositionalArguments.size()!=0 or showlistOption!=false){
@@ -79,8 +88,11 @@ int main(int argc, char *argv[]){
     }else{
         QCoreApplication app(argc, argv);
 
+        app.installTranslator(&qtTranslator);
+        app.installTranslator(&translator);
+
         ObjectConsole form;
-        form.calcHash(listPositionalArguments,showProgress,showlistOption);
+        form.calcHash(listPositionalArguments,showProgress,showlistOption,compareHash);
 
         return app.exec();
     }

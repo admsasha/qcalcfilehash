@@ -15,6 +15,7 @@
     </message>
     <message>
         <location filename="mainwindow.ui" line="43"/>
+        <location filename="mainwindow.ui" line="212"/>
         <source>TextLabel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -58,13 +59,34 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="47"/>
+        <location filename="mainwindow.ui" line="189"/>
+        <source>Check:</source>
+        <oldsource>Check with:</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="225"/>
+        <source>Compare the hash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="52"/>
         <source>Open file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="47"/>
+        <location filename="mainwindow.cpp" line="52"/>
         <source>All Files (*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="116"/>
+        <source>equally</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="118"/>
+        <source>different</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -76,36 +98,71 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ObjectConsole.cpp" line="52"/>
+        <location filename="ObjectConsole.cpp" line="53"/>
         <source>Invalid hash argument</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ObjectConsole.cpp" line="56"/>
-        <source>Filename: </source>
+        <location filename="ObjectConsole.cpp" line="57"/>
+        <source>Filename: %s</source>
+        <oldsource>Filename: </oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ObjectConsole.cpp" line="87"/>
+        <source>Result: %s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ObjectConsole.cpp" line="91"/>
+        <location filename="ObjectConsole.cpp" line="93"/>
+        <source>Check: %s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ObjectConsole.cpp" line="91"/>
+        <source>equally</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ObjectConsole.cpp" line="93"/>
+        <source>different</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>QCoreApplication</name>
     <message>
-        <location filename="main.cpp" line="49"/>
+        <location filename="main.cpp" line="50"/>
         <source>Source file to hash.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="50"/>
+        <location filename="main.cpp" line="51"/>
         <source>Hash algorithm.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="52"/>
+        <location filename="main.cpp" line="59"/>
         <source>Show progress</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="main.cpp" line="55"/>
+        <location filename="main.cpp" line="62"/>
         <source>Show list all hash algorithm.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>main</name>
+    <message>
+        <location filename="main.cpp" line="54"/>
+        <source>hash comparison</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="main.cpp" line="55"/>
+        <source>hash</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

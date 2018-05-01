@@ -8,12 +8,13 @@ class ObjectConsole : public QObject{
     public:
         explicit ObjectConsole(QObject *parent = nullptr);
 
-        void calcHash(QStringList listPositionalArguments, bool showProgress, bool showlistOption);
+        void calcHash(QStringList listPositionalArguments, bool showProgress, bool showlistOption, QString compareHash);
 
     private:
         int current_progress;
 
         bool _showProgress;
+        QString _compareHash;
 
     signals:
 

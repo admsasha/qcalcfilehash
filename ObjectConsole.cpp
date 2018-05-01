@@ -12,7 +12,7 @@ ObjectConsole::ObjectConsole(QObject *parent) : QObject(parent){
     current_progress=0;
 }
 
-void ObjectConsole::calcHash(QStringList listPositionalArguments,bool showProgress,bool showlistOption){
+void ObjectConsole::calcHash(QStringList listPositionalArguments,bool showProgress,bool showlistOption,QString compareHash){
     if (showlistOption){
         std::cout << "CRC-8, CRC-32, MD4, MD5, SHA-1, SHA-224, SHA-256, SHA-384, SHA-512" << std::endl;
         exit(0);
@@ -28,6 +28,7 @@ void ObjectConsole::calcHash(QStringList listPositionalArguments,bool showProgre
     HASH_ALGORITHM hash = HASH_ALGORITHM::Crc8;
 
     _showProgress=showProgress;
+    _compareHash=compareHash;
 
 
     if (hashAlgorithm=="CRC-8"){
@@ -84,6 +85,14 @@ void ObjectConsole::calcHashResult(QString hash){
     if (_showProgress) std::cout << std::endl;
 
     qInfo(qUtf8Printable(tr("Result: %s")),qUtf8Printable(hash));
+
+    if (_compareHash!=""){
+        if (hash.toUpper()==_compareHash){
+            qInfo(qUtf8Printable(tr("Check: %s")),qUtf8Printable(tr("equally")));
+        }else{
+            qInfo(qUtf8Printable(tr("Check: %s")),qUtf8Printable(tr("different")));
+        }
+    }
 
     exit(0);
 }

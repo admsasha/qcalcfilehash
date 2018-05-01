@@ -15,6 +15,7 @@
     </message>
     <message>
         <location filename="mainwindow.ui" line="43"/>
+        <location filename="mainwindow.ui" line="212"/>
         <source>TextLabel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -58,14 +59,34 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="47"/>
+        <location filename="mainwindow.ui" line="189"/>
+        <source>Check:</source>
+        <translation type="unfinished">Проверка:</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="225"/>
+        <source>Compare the hash</source>
+        <translation>Сравнение с хешем</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="52"/>
         <source>Open file</source>
         <translation>Открыть файл</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="47"/>
+        <location filename="mainwindow.cpp" line="52"/>
         <source>All Files (*)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="116"/>
+        <source>equally</source>
+        <translation>одинаковый</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="118"/>
+        <source>different</source>
+        <translation>разный</translation>
     </message>
     <message>
         <source>All Files (*.*)</source>
@@ -80,37 +101,79 @@ p, li { white-space: pre-wrap; }
         <translation>Не верно указаны аргументы</translation>
     </message>
     <message>
-        <location filename="ObjectConsole.cpp" line="52"/>
+        <location filename="ObjectConsole.cpp" line="53"/>
         <source>Invalid hash argument</source>
         <translation>Указан не существующий hash алгоритм</translation>
     </message>
     <message>
-        <location filename="ObjectConsole.cpp" line="56"/>
-        <source>Filename: </source>
-        <translation type="unfinished"></translation>
+        <location filename="ObjectConsole.cpp" line="57"/>
+        <source>Filename: %s</source>
+        <translation>Имя файла: %s</translation>
+    </message>
+    <message>
+        <source>Result: </source>
+        <translation>Результат: </translation>
+    </message>
+    <message>
+        <location filename="ObjectConsole.cpp" line="91"/>
+        <location filename="ObjectConsole.cpp" line="93"/>
+        <source>Check: %s</source>
+        <translation>Проверка: %s</translation>
+    </message>
+    <message>
+        <location filename="ObjectConsole.cpp" line="91"/>
+        <source>equally</source>
+        <translation type="unfinished">одинаковый</translation>
+    </message>
+    <message>
+        <location filename="ObjectConsole.cpp" line="93"/>
+        <source>different</source>
+        <translation type="unfinished">разный</translation>
+    </message>
+    <message>
+        <location filename="ObjectConsole.cpp" line="87"/>
+        <source>Result: %s</source>
+        <translation>Результат: %s</translation>
     </message>
 </context>
 <context>
     <name>QCoreApplication</name>
     <message>
-        <location filename="main.cpp" line="49"/>
+        <location filename="main.cpp" line="50"/>
         <source>Source file to hash.</source>
         <translation>Исходный файл для хеширования</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="50"/>
+        <location filename="main.cpp" line="51"/>
         <source>Hash algorithm.</source>
         <translation>Хешь алгоритм</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="52"/>
+        <location filename="main.cpp" line="59"/>
         <source>Show progress</source>
         <translation>Показывать процесс</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="55"/>
+        <location filename="main.cpp" line="62"/>
         <source>Show list all hash algorithm.</source>
         <translation>Вывести все хешь алгоритмы</translation>
+    </message>
+    <message>
+        <source>Result: </source>
+        <translation type="obsolete">Результат: </translation>
+    </message>
+</context>
+<context>
+    <name>main</name>
+    <message>
+        <location filename="main.cpp" line="54"/>
+        <source>hash comparison</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="main.cpp" line="55"/>
+        <source>hash</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
