@@ -112,7 +112,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Result: </source>
-        <translation>Результат: </translation>
+        <translation type="vanished">Результат: </translation>
     </message>
     <message>
         <location filename="ObjectConsole.cpp" line="91"/>
@@ -139,41 +139,38 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QCoreApplication</name>
     <message>
-        <location filename="main.cpp" line="50"/>
+        <location filename="main.cpp" line="53"/>
         <source>Source file to hash.</source>
         <translation>Исходный файл для хеширования</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="51"/>
+        <location filename="main.cpp" line="54"/>
         <source>Hash algorithm.</source>
         <translation>Хешь алгоритм</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="59"/>
+        <location filename="main.cpp" line="57"/>
+        <source>hash comparison</source>
+        <translation>Хешь для сравнения</translation>
+    </message>
+    <message>
+        <location filename="main.cpp" line="58"/>
+        <source>hash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="main.cpp" line="62"/>
         <source>Show progress</source>
         <translation>Показывать процесс</translation>
     </message>
     <message>
-        <location filename="main.cpp" line="62"/>
+        <location filename="main.cpp" line="65"/>
         <source>Show list all hash algorithm.</source>
         <translation>Вывести все хешь алгоритмы</translation>
     </message>
     <message>
         <source>Result: </source>
         <translation type="obsolete">Результат: </translation>
-    </message>
-</context>
-<context>
-    <name>main</name>
-    <message>
-        <location filename="main.cpp" line="54"/>
-        <source>hash comparison</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="main.cpp" line="55"/>
-        <source>hash</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -42,6 +42,9 @@ int main(int argc, char *argv[]){
         QCoreApplication::setApplicationVersion(VERSION);
         QCoreApplication::setOrganizationDomain("dansoft.krasnokamensk.ru");
 
+        app.installTranslator(&qtTranslator);
+        app.installTranslator(&translator);
+
 
         QCommandLineParser parser;
         parser.setApplicationDescription("Calculator hash (SHA1, SHA-224, SHA-256, SHA-384, SHA-512, MD5, CRC32, CRC8)");
@@ -51,8 +54,8 @@ int main(int argc, char *argv[]){
         parser.addPositionalArgument("hash", QCoreApplication::tr("Hash algorithm."));
 
         QCommandLineOption CompareHash(QStringList() << "compare",
-                QCoreApplication::translate("main", "hash comparison"),
-                QCoreApplication::translate("main", "hash"));
+                QCoreApplication::tr("hash comparison"),
+                QCoreApplication::tr("hash"));
         parser.addOption(CompareHash);
 
 
