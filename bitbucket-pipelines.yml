@@ -12,6 +12,7 @@ pipelines:
     - step:
         script: # Modify the commands below to build your repository.
           - apt-get update && apt-get install -y libc++-dev gcc cpp libgcc-6-dev dpkg-dev 
-          - apt-get install -y qt5-qmake qt5-default libcurl4-openssl-dev
+          - apt-get install -y qt5-qmake qt5-default 
+          - apt-get install -y libssl-dev libcurl4-openssl-dev
           - qmake
           - make
