@@ -11,6 +11,6 @@ pipelines:
   default:
     - step:
         script: # Modify the commands below to build your repository.
-          - apt-get update && apt-get install -y libc++-dev gcc cpp libgcc-6-dev qt5-qmake qt5-default
+          - apt-get update && apt-get install -y libc++-dev gcc cpp libgcc-6-dev qt5-qmake qt5-default dpkg-dev
           - qmake
           - make
