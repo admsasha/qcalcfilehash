@@ -21,18 +21,18 @@ pipelines:
         image: aneitayang/aws-cli:1.0
         deployment: test
         script:
+          - ls -la
+          - pwd
           - echo "deploy to test"
     - step:
         name: Deploy to staging
         image: aneitayang/aws-cli:1.0
         deployment: staging
-        trigger: manual
         script:
           - echo "deploy to staging"
     - step:
         name: Deploy to production
         image: aneitayang/aws-cli:1.0
         deployment: production
-        trigger: manual
         script:
           - echo "deploy to production"
