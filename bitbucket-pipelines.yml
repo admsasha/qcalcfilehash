@@ -10,10 +10,29 @@ image: smartapps/bitbucket-pipelines-debian-9
 pipelines:
   default:
     - step:
-        deployment: production
         script: # Modify the commands below to build your repository.
           - apt-get update && apt-get install -y libc++-dev gcc cpp libgcc-6-dev dpkg-dev 
           - apt-get install -y qt5-qmake qt5-default 
           - apt-get install -y libssl-dev libcurl4-openssl-dev
           - qmake
           - make
+    - step:
+        name: Deploy to test
+        image: aneitayang/aws-cli:1.0
+        deployment: test
+        script:
+          - echo "deploy to test"
+    - step:
+        name: Deploy to staging
+        image: aneitayang/aws-cli:1.0
+        deployment: staging
+        trigger: manual
+        script:
+          - echo "deploy to staging"
+    - step:
+        name: Deploy to production
+        image: aneitayang/aws-cli:1.0
+        deployment: production
+        trigger: manual
+        script:
+          - echo "deploy to production"
