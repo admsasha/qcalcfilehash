@@ -50,8 +50,8 @@ int main(int argc, char *argv[]){
         parser.setApplicationDescription("Calculator hash (SHA1, SHA-224, SHA-256, SHA-384, SHA-512, MD5, CRC32, CRC8)");
         parser.addHelpOption();
         parser.addVersionOption();
-        parser.addPositionalArgument("filename", QCoreApplication::tr("Source file to hash."));
-        parser.addPositionalArgument("hash", QCoreApplication::tr("Hash algorithm."));
+        parser.addPositionalArgument("filename", QCoreApplication::tr("Source file to hash"));
+        parser.addPositionalArgument("hash", QCoreApplication::tr("Hash algorithm"));
 
         QCommandLineOption CompareHash(QStringList() << "compare",
                 QCoreApplication::tr("hash comparison"),
@@ -62,7 +62,7 @@ int main(int argc, char *argv[]){
         QCommandLineOption showProgressOption("p", QCoreApplication::tr("Show progress"));
         parser.addOption(showProgressOption);
 
-        QCommandLineOption listOption(QStringList() << "l" << "list", QCoreApplication::tr("Show list all hash algorithm."));
+        QCommandLineOption listOption(QStringList() << "l" << "list", QCoreApplication::tr("Show list all hash algorithm"));
         parser.addOption(listOption);
 
         parser.process(app);
