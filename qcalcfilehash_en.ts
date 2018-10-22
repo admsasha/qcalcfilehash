@@ -127,12 +127,14 @@ p, li { white-space: pre-wrap; }
     <name>QCoreApplication</name>
     <message>
         <location filename="main.cpp" line="53"/>
-        <source>Source file to hash.</source>
+        <source>Source file to hash</source>
+        <oldsource>Source file to hash.</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="main.cpp" line="54"/>
-        <source>Hash algorithm.</source>
+        <source>Hash algorithm</source>
+        <oldsource>Hash algorithm.</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -152,7 +154,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="main.cpp" line="65"/>
-        <source>Show list all hash algorithm.</source>
+        <source>Show list all hash algorithm</source>
+        <oldsource>Show list all hash algorithm.</oldsource>
         <translation type="unfinished"></translation>
     </message>
 </context>
