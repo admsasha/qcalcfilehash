@@ -58,5 +58,5 @@ Categories=Utility;Qt;
 EOF
 
 %changelog
-* Tue Jul 30 2019 Danilov Alexander <admsasha@altlinux.org> 1.0.4-alt1
+* Tue Jul 30 2019 Alexander Danilov <admsasha@altlinux.org> 1.0.4-alt1
 - release 1.0.4
