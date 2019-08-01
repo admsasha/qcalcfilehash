@@ -3,6 +3,7 @@ Name:		qcalcfilehash
 Version:	1.0.4
 Release:	alt1
 License:	GPLv2+
+Packager:	Alexander Danilov <admsasha@altlinux.org>
 Group:		File tools
 Url:		https://bitbucket.org/admsasha/qcalcfilehash
 Source0:	https://bitbucket.org/admsasha/QCalcFileHash/downloads/%{name}-%{version}.tar.gz
