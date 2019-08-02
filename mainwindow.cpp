@@ -27,15 +27,15 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->pushButton_4,SIGNAL(clicked(bool)),this,SLOT(changeShowCompareForm()));
     connect(ui->lineEdit,SIGNAL(textChanged(QString)),this,SLOT(resultCompare()));
 
-    ui->comboBox->addItem("CRC-8",(int)HASH_ALGORITHM::Crc8);
-    ui->comboBox->addItem("CRC-32",(int)HASH_ALGORITHM::Crc32);
-    ui->comboBox->addItem("MD4",(int)HASH_ALGORITHM::Md4);
-    ui->comboBox->addItem("MD5",(int)HASH_ALGORITHM::Md5);
-    ui->comboBox->addItem("SHA-1",(int)HASH_ALGORITHM::Sha1);
-    ui->comboBox->addItem("SHA-224",(int)HASH_ALGORITHM::Sha224);
-    ui->comboBox->addItem("SHA-256",(int)HASH_ALGORITHM::Sha256);
-    ui->comboBox->addItem("SHA-384",(int)HASH_ALGORITHM::Sha384);
-    ui->comboBox->addItem("SHA-512",(int)HASH_ALGORITHM::Sha512);
+    ui->comboBox->addItem("CRC-8",static_cast<int>(HASH_ALGORITHM::Crc8));
+    ui->comboBox->addItem("CRC-32",static_cast<int>(HASH_ALGORITHM::Crc32));
+    ui->comboBox->addItem("MD4",static_cast<int>(HASH_ALGORITHM::Md4));
+    ui->comboBox->addItem("MD5",static_cast<int>(HASH_ALGORITHM::Md5));
+    ui->comboBox->addItem("SHA-1",static_cast<int>(HASH_ALGORITHM::Sha1));
+    ui->comboBox->addItem("SHA-224",static_cast<int>(HASH_ALGORITHM::Sha224));
+    ui->comboBox->addItem("SHA-256",static_cast<int>(HASH_ALGORITHM::Sha256));
+    ui->comboBox->addItem("SHA-384",static_cast<int>(HASH_ALGORITHM::Sha384));
+    ui->comboBox->addItem("SHA-512",static_cast<int>(HASH_ALGORITHM::Sha512));
     ui->comboBox->setCurrentIndex(0);
 
     ui->label->setText("");
