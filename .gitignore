@@ -8,6 +8,5 @@
 /Makefile.Release
 /QCalcFileHash.pro.user
 /.qmake.stash
-
-
+/langs/*.qm
 

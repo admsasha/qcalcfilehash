@@ -27,7 +27,7 @@ int main(int argc, char *argv[]){
     qtTranslator.load("qt_"+locale,QLibraryInfo::location(QLibraryInfo::TranslationsPath));
 
     if (translator.load(QString("qcalcfilehash_") + locale)==false){
-        translator.load(QString("/usr/share/qcalcfilehash/qcalcfilehash_") + locale);
+        translator.load(QString("/usr/share/qcalcfilehash/langs/qcalcfilehash_") + locale);
     }
 
 

@@ -37,8 +37,56 @@ gcc {
     DEFINES += HAVE_GCC
 }
 
-TRANSLATIONS = qcalcfilehash_en.ts \
-    qcalcfilehash_ru.ts
+TRANSLATIONS = $$files(langs/qcalcfilehash_*.ts)
+
+### install ###
+
+isEmpty(QMAKE_LRELEASE) {
+    win32|os2:QMAKE_LRELEASE = $$[QT_INSTALL_BINS]\lrelease.exe
+    else:QMAKE_LRELEASE = $$[QT_INSTALL_BINS]/lrelease
+    unix {
+        !exists($$QMAKE_LRELEASE) { QMAKE_LRELEASE = lrelease-qt5 }
+    } else {
+        !exists($$QMAKE_LRELEASE) { QMAKE_LRELEASE = lrelease }
+    }
+}
+
+!win32 {
+  system($${QMAKE_LRELEASE} -silent $${_PRO_FILE_} 2> /dev/null)
+}
+win32 {
+  system($${QMAKE_LRELEASE} $${_PRO_FILE_})
+}
+
+updateqm.input = TRANSLATIONS
+updateqm.output = langs/${QMAKE_FILE_BASE}.qm
+updateqm.commands = $$QMAKE_LRELEASE -silent ${QMAKE_FILE_IN} -qm langs/${QMAKE_FILE_BASE}.qm
+updateqm.CONFIG += no_link target_predeps
+QMAKE_EXTRA_COMPILERS += updateqm
+
+data_bin.path = /usr/bin/
+data_bin.files = Bin/qcalcfilehash
+INSTALLS += data_bin
+
+data_app.path = /usr/share/applications/
+data_app.files = pkg/qcalcfilehash.desktop
+INSTALLS += data_app
+
+data_langs.path = /usr/share/qcalcfilehash/langs/
+data_langs.files = langs/*.qm langs/langs.json
+INSTALLS += data_langs
+
+data_icons16.path = /usr/share/icons/hicolor/16x16/apps/
+data_icons16.files = pkg/icons/16x16/qcalcfilehash.png
+INSTALLS += data_icons16
+
+data_icons32.path = /usr/share/icons/hicolor/32x32/apps/
+data_icons32.files = pkg/icons/32x32/qcalcfilehash.png
+INSTALLS += data_icons32
+
+data_icons48.path = /usr/share/icons/hicolor/48x48/apps/
+data_icons48.files = pkg/icons/48x48/qcalcfilehash.png
+INSTALLS += data_icons48
 
 # Input
 SOURCES += main.cpp \
