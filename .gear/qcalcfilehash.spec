@@ -30,7 +30,7 @@ Hash calculator (SHA1, SHA-224, SHA-256, SHA-384, SHA-512, MD5, CRC32, CRC8).
 %doc README.md
 %{_bindir}/%{name}
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/%{name}/*
+%{_datadir}/%{name}/
 %{_iconsdir}/hicolor/*/apps/%{name}.png
 
 %changelog
