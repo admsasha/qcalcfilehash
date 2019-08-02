@@ -2,7 +2,7 @@ Summary:	Hash calculator
 Name:		qcalcfilehash
 Version:	1.0.5
 Release:	alt1
-License:	GPLv2+
+License:	GPLv3+
 Group:		File tools
 Url:		https://bitbucket.org/admsasha/qcalcfilehash
 Source0:	%{name}-%{version}.tar
