@@ -1,3 +1,2 @@
-tar.gz: . name=@name@-@version@
-copy: .gear/qcalcfilehash.png
+tar: . name=@name@-@version@
 spec: .gear/qcalcfilehash.spec
