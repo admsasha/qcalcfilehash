@@ -4,4 +4,4 @@ Comment=Hash calculator
 Type=Application
 Exec=qcalcfilehash
 Icon=qcalcfilehash
-Categories=Utility;Qt;
+Categories=Utility;Qt;System;FileTools;
