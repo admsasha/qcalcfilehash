@@ -5,4 +5,3 @@ Type=Application
 Exec=qcalcfilehash
 Icon=qcalcfilehash
 Categories=Utility;Qt;
-EOF
