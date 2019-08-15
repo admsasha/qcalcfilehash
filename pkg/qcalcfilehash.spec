@@ -1,6 +1,6 @@
 Summary:	Hash calculator
 Name:		qcalcfilehash
-Version:	1.0.5
+Version:	1.0.6
 Release:	1
 License:	GPLv3+
 Group:		File tools

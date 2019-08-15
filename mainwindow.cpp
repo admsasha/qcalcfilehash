@@ -77,18 +77,18 @@ void MainWindow::changeShowCompareForm(){
         ui->label_5->setVisible(true);
         ui->lineEdit->setVisible(true);
 
-        ui->pushButton->move(ui->pushButton->x(),260);
-        ui->pushButton_4->move(ui->pushButton_4->x(),260);
-        ui->label_4->move(ui->label_4->x(),270);
+        //ui->pushButton->move(ui->pushButton->x(),260);
+        //ui->pushButton_4->move(ui->pushButton_4->x(),260);
+        //ui->label_4->move(ui->label_4->x(),270);
     }else{
         //this->setFixedHeight(222);
         ui->label_6->setVisible(false);
         ui->label_5->setVisible(false);
         ui->lineEdit->setVisible(false);
 
-        ui->pushButton->move(ui->pushButton->x(),190);
-        ui->pushButton_4->move(ui->pushButton_4->x(),190);
-        ui->label_4->move(ui->label_4->x(),200);
+//        ui->pushButton->move(ui->pushButton->x(),190);
+//        ui->pushButton_4->move(ui->pushButton_4->x(),190);
+//        ui->label_4->move(ui->label_4->x(),200);
     }
 }
 
