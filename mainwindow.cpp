@@ -16,7 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("QCalcFileHash v"+QString(VERSION)+" ("+QString(DATE_BUILD)+")");
-    this->setFixedSize(this->width(),this->height());
+    //this->setFixedSize(this->width(),this->height());
 
     changeShowCompareForm();
     ui->label_6->setText("");
@@ -72,7 +72,7 @@ void MainWindow::calcHashResult(QString hash) {
 
 void MainWindow::changeShowCompareForm(){
     if (ui->pushButton_4->isChecked()){
-        this->setFixedHeight(292);
+        //this->setFixedHeight(292);
         ui->label_6->setVisible(true);
         ui->label_5->setVisible(true);
         ui->lineEdit->setVisible(true);
@@ -81,7 +81,7 @@ void MainWindow::changeShowCompareForm(){
         ui->pushButton_4->move(ui->pushButton_4->x(),260);
         ui->label_4->move(ui->label_4->x(),270);
     }else{
-        this->setFixedHeight(222);
+        //this->setFixedHeight(222);
         ui->label_6->setVisible(false);
         ui->label_5->setVisible(false);
         ui->lineEdit->setVisible(false);
