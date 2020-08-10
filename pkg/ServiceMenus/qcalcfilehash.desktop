@@ -1,0 +1,63 @@
+[Desktop Entry]
+Type=Service
+X-KDE-ServiceTypes=KonqPopupMenu/Plugin
+MimeType=all/allfiles;
+Actions=calculateCRC8;calculateCRC32;calculateMD4;calculateMD5;calculateSHA1;calculateSHA224;calculateSHA256;calculateSHA384;calculateSHA512;
+X-KDE-Submenu=Hash calculator
+X-KDE-Submenu[ru]=Калькулятор хеш сумм
+Icon=qcalcfilehash
+
+[Desktop Action calculateCRC8]
+Name=Calculate CRC-8
+Name[ru]=Посчитать CRC-8
+Icon=qcalcfilehash
+Exec=qcalcfilehash --gui %f CRC-8
+
+[Desktop Action calculateCRC32]
+Name=Calculate CRC-32
+Name[ru]=Посчитать CRC-32
+Icon=qcalcfilehash
+Exec=qcalcfilehash --gui %f CRC-32
+
+[Desktop Action calculateMD4]
+Name=Calculate MD4
+Name[ru]=Посчитать MD4
+Icon=qcalcfilehash
+Exec=qcalcfilehash --gui %f MD4
+
+[Desktop Action calculateMD5]
+Name=Calculate MD5
+Name[ru]=Посчитать MD5
+Icon=qcalcfilehash
+Exec=qcalcfilehash --gui %f MD5
+
+[Desktop Action calculateSHA1]
+Name=Calculate SHA-1
+Name[ru]=Посчитать SHA-1
+Icon=qcalcfilehash
+Exec=qcalcfilehash --gui %f SHA-1
+
+[Desktop Action calculateSHA224]
+Name=Calculate SHA-224
+Name[ru]=Посчитать SHA-224
+Icon=qcalcfilehash
+Exec=qcalcfilehash --gui %f SHA-224
+
+[Desktop Action calculateSHA256]
+Name=Calculate SHA-256
+Name[ru]=Посчитать SHA-256
+Icon=qcalcfilehash
+Exec=qcalcfilehash --gui %f SHA-256
+
+[Desktop Action calculateSHA384]
+Name=Calculate SHA-384
+Name[ru]=Посчитать SHA-384
+Icon=qcalcfilehash
+Exec=qcalcfilehash --gui %f SHA-384
+
+[Desktop Action calculateSHA512]
+Name=Calculate SHA-512
+Name[ru]=Посчитать SHA-512
+Icon=qcalcfilehash
+Exec=qcalcfilehash --gui %f SHA-512
+
