@@ -4,11 +4,13 @@
 #include <QFile>
 #include <QFileDialog>
 #include <QDateTime>
+#include <QDebug>
+#include <QScreen>
+#include <QTimer>
 
 #include "ThreadCalcHash.h"
 #include "version.h"
 
-#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -40,11 +42,34 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->label->setText("");
     ui->progressBar->setValue(0);
     ui->progressBar->setEnabled(false);
+
+    QTimer::singleShot(100,[&](){
+        // move to center
+        this->move((qApp->primaryScreen()->size().width()-this->width())/2,(qApp->primaryScreen()->size().height()-this->height())/2);
+    });
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::setFilename(QString filename){
+    ui->label->setText(filename);
+    _filename=filename;
+}
+
+void MainWindow::setHash(QString hashName){
+    for (int i=0;i<ui->comboBox->count();i++){
+        if (ui->comboBox->itemText(i).toLower()==hashName.toLower()){
+            ui->comboBox->setCurrentIndex(i);
+            return;
+        }
+    }
+}
+
+void MainWindow::startCalc(){
+    emit calcHash();
 }
 
 void MainWindow::openfile(){
@@ -83,6 +108,8 @@ void MainWindow::changeShowCompareForm(){
 
 
 void MainWindow::calcHash(){
+    if (_filename.isEmpty()) return;
+
     ui->progressBar->setValue(0);
     ui->progressBar->setEnabled(true);
     ui->textEdit->setText("");

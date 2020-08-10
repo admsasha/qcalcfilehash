@@ -13,6 +13,9 @@ class MainWindow : public QMainWindow {
     public:
         explicit MainWindow(QWidget *parent = 0);
         ~MainWindow();
+        void setFilename(QString filename);
+        void setHash(QString hashName);
+        void startCalc();
 
     private:
         Ui::MainWindow *ui;

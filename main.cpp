@@ -33,6 +33,7 @@ int main(int argc, char *argv[]){
 
     bool showProgress=false;
     bool showlistOption=false;
+    bool isForceGui=false;
     QStringList listPositionalArguments;
     QString compareHash="";
 
@@ -65,18 +66,23 @@ int main(int argc, char *argv[]){
         QCommandLineOption listOption(QStringList() << "l" << "list", QCoreApplication::tr("Show list all hash algorithm"));
         parser.addOption(listOption);
 
+        QCommandLineOption forceGui(QStringList() << "gui", QCoreApplication::tr("Open in gui"));
+        parser.addOption(forceGui);
+
         parser.process(app);
 
         listPositionalArguments = parser.positionalArguments();
         showProgress = parser.isSet(showProgressOption);
         showlistOption = parser.isSet(listOption);
         compareHash = parser.value(CompareHash);
-
+        isForceGui = parser.isSet(forceGui);
     }
 
     if (listPositionalArguments.size()!=0 or showlistOption!=false){
         useGUI=false;
     }
+    if (isForceGui) useGUI=true;
+
 
     if (useGUI){
         QApplication app(argc, argv);
@@ -85,7 +91,11 @@ int main(int argc, char *argv[]){
         app.installTranslator(&translator);
 
         MainWindow form;
+        if (listPositionalArguments.size()>=1) form.setFilename(listPositionalArguments.at(0));
+        if (listPositionalArguments.size()>=2) form.setHash(listPositionalArguments.at(1));
+
         form.show();
+        form.startCalc();
 
         return app.exec();
     }else{
