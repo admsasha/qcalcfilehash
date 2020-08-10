@@ -6,3 +6,4 @@ Type=Application
 Exec=qcalcfilehash
 Icon=qcalcfilehash
 Categories=System;FileTools;
+Keywords=Hash;SHA1;SHA224;SHA256;SHA384;SHA512;MD5;CRC32;CRC8;
