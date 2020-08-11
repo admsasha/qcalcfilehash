@@ -4,16 +4,7 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.ui" line="79"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Droid Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="172"/>
+        <location filename="../mainwindow.ui" line="182"/>
         <source>Close</source>
         <translation>Выход</translation>
     </message>
@@ -38,37 +29,42 @@ p, li { white-space: pre-wrap; }
         <translation>Путь:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="139"/>
-        <source>Copyright DanSoft. All rights reserved.</source>
-        <translation>Авторские права принадлежат DanSoft. Все права защищены.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="119"/>
+        <location filename="../mainwindow.ui" line="129"/>
         <source>Check:</source>
         <translation>Проверка:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="162"/>
+        <location filename="../mainwindow.ui" line="172"/>
         <source>Compare the hash</source>
         <translation>Сравнение с хешем</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="76"/>
+        <location filename="../mainwindow.cpp" line="24"/>
+        <source>Copyright 2017-2020 DanSoft.</source>
+        <translation>Copyright 2017-2020 DanSoft.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="24"/>
+        <source>All rights reserved.</source>
+        <translation>Все права защищены</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="77"/>
         <source>Open file</source>
         <translation>Открыть файл</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="76"/>
+        <location filename="../mainwindow.cpp" line="77"/>
         <source>All Files (*)</source>
         <translation>Все файлы (*)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="132"/>
+        <location filename="../mainwindow.cpp" line="133"/>
         <source>equally</source>
         <translation>одинаковый</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="134"/>
+        <location filename="../mainwindow.cpp" line="135"/>
         <source>different</source>
         <translation>разный</translation>
     </message>
