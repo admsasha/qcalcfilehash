@@ -129,8 +129,8 @@ void MainWindow::calcHash(){
 
 void MainWindow::resultCompare(){
     if (ui->textEdit->toPlainText().toUpper()==ui->lineEdit->text().toUpper()){
-        ui->label_6->setText(tr("equally"));
+        ui->label_6->setText("<font color=\"#005500\">"+tr("equally")+"</font>");
     }else{
-        ui->label_6->setText(tr("different"));
+        ui->label_6->setText("<font color=\"#ff0000\">"+tr("different")+"</font>");
     }
 }
