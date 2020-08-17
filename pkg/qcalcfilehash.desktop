@@ -1,7 +1,9 @@
 [Desktop Entry]
 Name=QCalcFileHash
 Comment=Calculator hash (SHA1, SHA-224, SHA-256, SHA-384, SHA-512, MD5, CRC32, CRC8)
+Comment[pt_BR]=Calculadora de hash (SHA1, SHA-224, SHA-256, SHA-384, SHA-512, MD5, CRC32, CRC8)
 GenericName=Hash calculator
+GenericName[pt_BR]=Calculadora de hash
 Type=Application
 Exec=qcalcfilehash
 Icon=qcalcfilehash
