@@ -11,7 +11,7 @@ Please note the "with the OpenSSL exception"
 
 The utility has the same console interface. Type qcalcfilehash --help, for reference.
 
-![QCalcFileHash images](http://dansoft.krasnokamensk.ru/data/1018/qcalcfilehash.png)
+![QCalcFileHash images](https://dansoft.ru/data/1018/qcalcfilehash.png)
 
 
 ### How do I get set up? ###
