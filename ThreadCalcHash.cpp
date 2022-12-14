@@ -246,12 +246,13 @@ std::string ThreadCalcHash::getMD4FromFile(const std::string &filename){
         char * buffer = new char [lengthBuffer+1];
 
         MD4_Init (&mdContext);
-        while((countRead = file.readsome(buffer,lengthBuffer))>0){
-            if (file){
-                allRead+=countRead;
-                MD4_Update (&mdContext, buffer,countRead);
-                emit changeValue(allRead*100/nFileLen);
-            }
+        while (file.good()) {
+            file.read(buffer, lengthBuffer);
+            countRead = file.gcount();
+
+            allRead+=countRead;
+            MD4_Update (&mdContext, buffer,countRead);
+            emit changeValue(allRead*100/nFileLen);
         }
         MD4_Final (buffer_md4,&mdContext);
         delete[] buffer;
@@ -273,23 +274,24 @@ std::string ThreadCalcHash::getMD5FromFile(const std::string &filename){
 
     std::ifstream file(filename, std::ios_base::binary);
     if (file){
-        int countRead=0;
-        uint64_t allRead=0;
+        size_t countRead=0;
+        size_t allRead=0;
 
         file.seekg(0, std::ios_base::end);
-        uint64_t nFileLen = file.tellg();
+        size_t nFileLen = file.tellg();
         file.seekg (0, std::ios::beg);
 
-        uint64_t lengthBuffer=1*1024*1024;
+        size_t lengthBuffer=1*1024*1024;
         char * buffer = new char [lengthBuffer+1];
 
         MD5_Init (&mdContext);
-        while((countRead = file.readsome(buffer,lengthBuffer))>0){
-            if (file){
-                allRead+=countRead;
-                MD5_Update (&mdContext, buffer,countRead);
-                emit changeValue(allRead*100/nFileLen);
-            }
+        while (file.good()) {
+            file.read(buffer, lengthBuffer);
+            countRead = file.gcount();
+
+            allRead+=countRead;
+            MD5_Update (&mdContext, buffer,countRead);
+            emit changeValue(allRead*100/nFileLen);
         }
         MD5_Final (buffer_md5,&mdContext);
         delete[] buffer;
@@ -322,12 +324,13 @@ std::string ThreadCalcHash::getSHA1FromFile(const std::string &filename){
         char * buffer = new char [lengthBuffer+1];
 
         SHA1_Init (&mdContext);
-        while((countRead = file.readsome(buffer,lengthBuffer))>0){
-            if (file){
-                allRead+=countRead;
-                SHA1_Update (&mdContext, buffer,countRead);
-                emit changeValue(allRead*100/nFileLen);
-            }
+        while (file.good()) {
+            file.read(buffer, lengthBuffer);
+            countRead = file.gcount();
+
+            allRead+=countRead;
+            SHA1_Update (&mdContext, buffer,countRead);
+            emit changeValue(allRead*100/nFileLen);
         }
         SHA1_Final (buffer_sha1,&mdContext);
         delete[] buffer;
@@ -360,12 +363,13 @@ std::string ThreadCalcHash::getSHA224FromFile(const std::string &filename){
         char * buffer = new char [lengthBuffer+1];
 
         SHA224_Init (&mdContext);
-        while((countRead = file.readsome(buffer,lengthBuffer))>0){
-            if (file){
-                allRead+=countRead;
-                SHA224_Update (&mdContext, buffer,countRead);
-                emit changeValue(allRead*100/nFileLen);
-            }
+        while (file.good()) {
+            file.read(buffer, lengthBuffer);
+            countRead = file.gcount();
+
+            allRead+=countRead;
+            SHA224_Update (&mdContext, buffer,countRead);
+            emit changeValue(allRead*100/nFileLen);
         }
         SHA224_Final (buffer_sha224,&mdContext);
         delete[] buffer;
@@ -398,12 +402,13 @@ std::string ThreadCalcHash::getSHA256FromFile(const std::string &filename){
         char * buffer = new char [lengthBuffer+1];
 
         SHA256_Init (&mdContext);
-        while((countRead = file.readsome(buffer,lengthBuffer))>0){
-            if (file){
-                allRead+=countRead;
-                SHA256_Update (&mdContext, buffer,countRead);
-                emit changeValue(allRead*100/nFileLen);
-            }
+        while (file.good()) {
+            file.read(buffer, lengthBuffer);
+            countRead = file.gcount();
+
+            allRead+=countRead;
+            SHA256_Update (&mdContext, buffer,countRead);
+            emit changeValue(allRead*100/nFileLen);
         }
         SHA256_Final (buffer_sha256,&mdContext);
         delete[] buffer;
@@ -437,12 +442,13 @@ std::string ThreadCalcHash::getSHA384FromFile(const std::string &filename){
         char * buffer = new char [lengthBuffer+1];
 
         SHA384_Init (&mdContext);
-        while((countRead = file.readsome(buffer,lengthBuffer))>0){
-            if (file){
-                allRead+=countRead;
-                SHA384_Update (&mdContext, buffer,countRead);
-                emit changeValue(allRead*100/nFileLen);
-            }
+        while (file.good()) {
+            file.read(buffer, lengthBuffer);
+            countRead = file.gcount();
+
+            allRead+=countRead;
+            SHA384_Update (&mdContext, buffer,countRead);
+            emit changeValue(allRead*100/nFileLen);
         }
         SHA384_Final (buffer_sha384,&mdContext);
         delete[] buffer;
@@ -474,12 +480,13 @@ std::string ThreadCalcHash::getSHA512FromFile(const std::string &filename){
         char * buffer = new char [lengthBuffer+1];
 
         SHA512_Init (&mdContext);
-        while((countRead = file.readsome(buffer,lengthBuffer))>0){
-            if (file){
-                allRead+=countRead;
-                SHA512_Update (&mdContext, buffer,countRead);
-                emit changeValue(allRead*100/nFileLen);
-            }
+        while (file.good()) {
+            file.read(buffer, lengthBuffer);
+            countRead = file.gcount();
+
+            allRead+=countRead;
+            SHA512_Update (&mdContext, buffer,countRead);
+            emit changeValue(allRead*100/nFileLen);
         }
         SHA512_Final (buffer_sha512,&mdContext);
         delete[] buffer;
