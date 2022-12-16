@@ -198,7 +198,7 @@ std::string ThreadCalcHash::opensslEvp(const std::string &filename, const std::s
 
             allRead+=countRead;
             EVP_DigestUpdate(mdctx, buffer, countRead);
-            emit changeValue(allRead*100/nFileLen);
+            if (nFileLen>0) emit changeValue(allRead*100/nFileLen);
         }
         EVP_DigestFinal_ex(mdctx, md_value, &md_len);
         EVP_MD_CTX_free(mdctx);
@@ -312,7 +312,7 @@ std::string ThreadCalcHash::getMD4FromFile(const std::string &filename){
 
             allRead+=countRead;
             MD4_Update (&mdContext, buffer,countRead);
-            emit changeValue(allRead*100/nFileLen);
+            if (nFileLen>0) emit changeValue(allRead*100/nFileLen);
         }
         MD4_Final (buffer_md4,&mdContext);
         delete[] buffer;
@@ -351,7 +351,7 @@ std::string ThreadCalcHash::getMD5FromFile(const std::string &filename){
 
             allRead+=countRead;
             MD5_Update (&mdContext, buffer,countRead);
-            emit changeValue(allRead*100/nFileLen);
+            if (nFileLen>0) emit changeValue(allRead*100/nFileLen);
         }
         MD5_Final (buffer_md5,&mdContext);
         delete[] buffer;
@@ -390,7 +390,7 @@ std::string ThreadCalcHash::getSHA1FromFile(const std::string &filename){
 
             allRead+=countRead;
             SHA1_Update (&mdContext, buffer,countRead);
-            emit changeValue(allRead*100/nFileLen);
+            if (nFileLen>0) emit changeValue(allRead*100/nFileLen);
         }
         SHA1_Final (buffer_sha1,&mdContext);
         delete[] buffer;
@@ -429,7 +429,7 @@ std::string ThreadCalcHash::getSHA224FromFile(const std::string &filename){
 
             allRead+=countRead;
             SHA224_Update (&mdContext, buffer,countRead);
-            emit changeValue(allRead*100/nFileLen);
+            if (nFileLen>0) emit changeValue(allRead*100/nFileLen);
         }
         SHA224_Final (buffer_sha224,&mdContext);
         delete[] buffer;
@@ -468,7 +468,7 @@ std::string ThreadCalcHash::getSHA256FromFile(const std::string &filename){
 
             allRead+=countRead;
             SHA256_Update (&mdContext, buffer,countRead);
-            emit changeValue(allRead*100/nFileLen);
+            if (nFileLen>0) emit changeValue(allRead*100/nFileLen);
         }
         SHA256_Final (buffer_sha256,&mdContext);
         delete[] buffer;
@@ -508,7 +508,7 @@ std::string ThreadCalcHash::getSHA384FromFile(const std::string &filename){
 
             allRead+=countRead;
             SHA384_Update (&mdContext, buffer,countRead);
-            emit changeValue(allRead*100/nFileLen);
+            if (nFileLen>0) emit changeValue(allRead*100/nFileLen);
         }
         SHA384_Final (buffer_sha384,&mdContext);
         delete[] buffer;
@@ -546,7 +546,7 @@ std::string ThreadCalcHash::getSHA512FromFile(const std::string &filename){
 
             allRead+=countRead;
             SHA512_Update (&mdContext, buffer,countRead);
-            emit changeValue(allRead*100/nFileLen);
+            if (nFileLen>0) emit changeValue(allRead*100/nFileLen);
         }
         SHA512_Final (buffer_sha512,&mdContext);
         delete[] buffer;
