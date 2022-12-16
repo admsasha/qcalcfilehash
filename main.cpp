@@ -52,7 +52,9 @@ int main(int argc, char *argv[]){
     qtTranslator.load("qt_"+locale,QLibraryInfo::location(QLibraryInfo::TranslationsPath));
 
     if (translator.load(QString("qcalcfilehash_") + locale)==false){
-        translator.load(QString("/usr/share/qcalcfilehash/langs/qcalcfilehash_") + locale);
+        if (translator.load(QString("langs/qcalcfilehash_") + locale)==false){
+            translator.load(QString("/usr/share/qcalcfilehash/langs/qcalcfilehash_") + locale);
+        }
     }
 
     int gostSupport = init_gost();
