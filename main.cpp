@@ -41,7 +41,7 @@ int main(int argc, char *argv[]){
         QCoreApplication app(argc, argv);
         QCoreApplication::setApplicationName("QCalcFileHash");
         QCoreApplication::setApplicationVersion(VERSION);
-        QCoreApplication::setOrganizationDomain("dansoft.krasnokamensk.ru");
+        QCoreApplication::setOrganizationDomain("dansoft.ru");
 
         app.installTranslator(&qtTranslator);
         app.installTranslator(&translator);
