@@ -8,13 +8,17 @@
 
 #include <iostream>
 
-ObjectConsole::ObjectConsole(QObject *parent) : QObject(parent){
+ObjectConsole::ObjectConsole(QObject *parent, int gostSupport) : QObject(parent),_gostSupport(gostSupport){
     current_progress=0;
 }
 
 void ObjectConsole::calcHash(QStringList listPositionalArguments,bool showProgress,bool showlistOption,QString compareHash){
     if (showlistOption){
-        std::cout << "CRC-8, CRC-32, MD4, MD5, SHA-1, SHA-224, SHA-256, SHA-384, SHA-512" << std::endl;
+        std::cout << "CRC-8, CRC-32, MD4, MD5, SHA-1, SHA-224, SHA-256, SHA-384, SHA-512";
+        if (_gostSupport){
+            std::cout << ", md_gost94, md_gost12_256, md_gost12_512";
+        }
+        std::cout << std::endl;
         exit(0);
     }
 
@@ -49,6 +53,12 @@ void ObjectConsole::calcHash(QStringList listPositionalArguments,bool showProgre
         hash=HASH_ALGORITHM::Sha384;
     }else if (hashAlgorithm=="SHA-512"){
         hash=HASH_ALGORITHM::Sha512;
+    }else if (_gostSupport && hashAlgorithm=="md_gost94"){
+        hash=HASH_ALGORITHM::md_gost94;
+    }else if (_gostSupport && hashAlgorithm=="md_gost12_256"){
+        hash=HASH_ALGORITHM::md_gost12_256;
+    }else if (_gostSupport && hashAlgorithm=="md_gost12_512"){
+        hash=HASH_ALGORITHM::md_gost12_512;
     }else{
         qCritical("%s",qUtf8Printable(tr("Invalid hash argument")));
         exit(0);

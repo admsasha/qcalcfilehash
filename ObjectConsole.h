@@ -6,11 +6,13 @@
 class ObjectConsole : public QObject{
     Q_OBJECT
     public:
-        explicit ObjectConsole(QObject *parent = nullptr);
+        explicit ObjectConsole(QObject *parent = nullptr,int gostSupport=0);
 
         void calcHash(QStringList listPositionalArguments, bool showProgress, bool showlistOption, QString compareHash);
 
     private:
+        int _gostSupport;
+
         int current_progress;
 
         bool _showProgress;

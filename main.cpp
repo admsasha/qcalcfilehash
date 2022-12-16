@@ -2,13 +2,40 @@
 #include <QTranslator>
 #include <QLibraryInfo>
 #include <QCommandLineParser>
-#include <QDebug>
+
+#include <openssl/engine.h>
 
 #include "mainwindow.h"
 #include "ObjectConsole.h"
 #include "version.h"
 
-#include <iostream>
+
+// Engine gost initialization
+int init_gost(){
+    static ENGINE *e = NULL;
+
+    ENGINE_load_builtin_engines();
+    ENGINE_register_all_complete();
+
+    e = ENGINE_by_id("gost");
+    if (!e){
+        // Can't find engine
+        return 0;
+    }
+    if (!ENGINE_init(e)){
+        // Engine initialization failed!
+        ENGINE_free(e);
+        return 0;
+    }
+    ENGINE_free(e);
+
+    if (!ENGINE_set_default(e, ENGINE_METHOD_ALL)) {
+        // Initialized but not usable
+        return 0;
+    }
+
+    return 1;
+}
 
 
 int main(int argc, char *argv[]){
@@ -17,8 +44,6 @@ int main(int argc, char *argv[]){
 #else
     bool useGUI = true;
 #endif
-
-
 
     QTranslator translator;
     QTranslator qtTranslator;
@@ -29,6 +54,8 @@ int main(int argc, char *argv[]){
     if (translator.load(QString("qcalcfilehash_") + locale)==false){
         translator.load(QString("/usr/share/qcalcfilehash/langs/qcalcfilehash_") + locale);
     }
+
+    int gostSupport = init_gost();
 
 
     bool showProgress=false;
@@ -90,7 +117,7 @@ int main(int argc, char *argv[]){
         app.installTranslator(&qtTranslator);
         app.installTranslator(&translator);
 
-        MainWindow form;
+        MainWindow form(nullptr,gostSupport);
         if (listPositionalArguments.size()>=1) form.setFilename(listPositionalArguments.at(0));
         if (listPositionalArguments.size()>=2) form.setHash(listPositionalArguments.at(1));
 
@@ -104,7 +131,7 @@ int main(int argc, char *argv[]){
         app.installTranslator(&qtTranslator);
         app.installTranslator(&translator);
 
-        ObjectConsole form;
+        ObjectConsole form(nullptr,gostSupport);
         form.calcHash(listPositionalArguments,showProgress,showlistOption,compareHash);
 
         return app.exec();

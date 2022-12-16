@@ -11,7 +11,7 @@ class MainWindow : public QMainWindow {
     Q_OBJECT
 
     public:
-        explicit MainWindow(QWidget *parent = 0);
+        explicit MainWindow(QWidget *parent = 0,int gostSupport=0);
         ~MainWindow();
         void setFilename(QString filename);
         void setHash(QString hashName);
@@ -21,6 +21,7 @@ class MainWindow : public QMainWindow {
         Ui::MainWindow *ui;
 
         QString _filename;
+        int _gostSupport;
 
         int oldValueProcHash;
 

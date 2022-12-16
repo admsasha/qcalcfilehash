@@ -12,9 +12,10 @@
 #include "version.h"
 
 
-MainWindow::MainWindow(QWidget *parent) :
+MainWindow::MainWindow(QWidget *parent, int gostSupport) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow)
+    ui(new Ui::MainWindow),
+    _gostSupport(gostSupport)
 {
     ui->setupUi(this);
     this->setWindowTitle("QCalcFileHash v"+QString(VERSION)+" ("+QString(DATE_BUILD)+")");
@@ -38,6 +39,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->comboBox->addItem("SHA-256",static_cast<int>(HASH_ALGORITHM::Sha256));
     ui->comboBox->addItem("SHA-384",static_cast<int>(HASH_ALGORITHM::Sha384));
     ui->comboBox->addItem("SHA-512",static_cast<int>(HASH_ALGORITHM::Sha512));
+    if (gostSupport){
+        ui->comboBox->addItem("md_gost94",static_cast<int>(HASH_ALGORITHM::md_gost94));
+        ui->comboBox->addItem("md_gost12_256",static_cast<int>(HASH_ALGORITHM::md_gost12_256));
+        ui->comboBox->addItem("md_gost12_512",static_cast<int>(HASH_ALGORITHM::md_gost12_512));
+    }
     ui->comboBox->setCurrentIndex(0);
 
     ui->label->setText("");

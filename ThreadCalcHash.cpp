@@ -11,6 +11,7 @@
 #include <openssl/md5.h>
 #include <openssl/sha.h>
 #include <openssl/md4.h>
+#include <openssl/evp.h>
 
 const uint_least32_t Crc32Table[256] = {
     0x00000000, 0x77073096, 0xEE0E612C, 0x990951BA,
@@ -139,6 +140,15 @@ void ThreadCalcHash::run(){
     if (_hashAlgorithm==HASH_ALGORITHM::Sha512){
         hash = QString::fromStdString(getSHA512FromFile(filename));
     }
+    if (_hashAlgorithm==HASH_ALGORITHM::md_gost94){
+        hash = QString::fromStdString(getGost94FromFile(filename));
+    }
+    if (_hashAlgorithm==HASH_ALGORITHM::md_gost12_256){
+        hash = QString::fromStdString(getGost12_256FromFile(filename));
+    }
+    if (_hashAlgorithm==HASH_ALGORITHM::md_gost12_512){
+        hash = QString::fromStdString(getGost12_512FromFile(filename));
+    }
 
     emit result(hash.toUpper());
 
@@ -152,6 +162,56 @@ void ThreadCalcHash::setFilename(QString filename){
 
 void ThreadCalcHash::setHashAlgorithm(HASH_ALGORITHM algorithm){
     _hashAlgorithm=algorithm;
+}
+
+std::string ThreadCalcHash::opensslEvp(const std::string &filename, const std::string &digest){
+    EVP_MD_CTX *mdctx;
+    const EVP_MD *md;
+    unsigned char md_value[EVP_MAX_MD_SIZE];
+    unsigned int md_len, i;
+    std::stringstream ss;
+
+    md = EVP_get_digestbyname(digest.c_str());
+    if (md == NULL) {
+        printf("Unknown message digest %s\n", digest.c_str());
+        exit(1);
+    }
+
+    std::ifstream file(filename, std::ios_base::binary);
+    if (file){
+        int countRead=0;
+        uint64_t allRead=0;
+
+        file.seekg(0, std::ios_base::end);
+        uint64_t nFileLen = file.tellg();
+        file.seekg (0, std::ios::beg);
+
+        uint64_t lengthBuffer=1*1024*1024;
+        char * buffer = new char [lengthBuffer+1];
+
+        mdctx = EVP_MD_CTX_new();
+        EVP_DigestInit_ex(mdctx, md, NULL);
+
+        while (file.good()) {
+            file.read(buffer, lengthBuffer);
+            countRead = file.gcount();
+
+            allRead+=countRead;
+            EVP_DigestUpdate(mdctx, buffer, countRead);
+            emit changeValue(allRead*100/nFileLen);
+        }
+        EVP_DigestFinal_ex(mdctx, md_value, &md_len);
+        EVP_MD_CTX_free(mdctx);
+        delete[] buffer;
+
+        for (i = 0; i < md_len; i++){
+            ss << std::hex << std::setw(2) << std::setfill('0') << (int)md_value[i];
+        }
+
+        file.close();
+    }
+
+    return ss.str();
 }
 
 
@@ -499,4 +559,16 @@ std::string ThreadCalcHash::getSHA512FromFile(const std::string &filename){
     }
 
     return ss.str();
+}
+
+std::string ThreadCalcHash::getGost94FromFile(const std::string &filename){
+    return opensslEvp(filename,"md_gost94");
+}
+
+std::string ThreadCalcHash::getGost12_256FromFile(const std::string &filename){
+    return opensslEvp(filename,"md_gost12_256");
+}
+
+std::string ThreadCalcHash::getGost12_512FromFile(const std::string &filename){
+    return opensslEvp(filename,"md_gost12_512");
 }
