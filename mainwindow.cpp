@@ -84,6 +84,9 @@ void MainWindow::openfile(){
 
     ui->label->setText(fileName);
     _filename=fileName;
+
+    ui->textEdit->setText("");
+    resultCompare();
 }
 
 void MainWindow::calcHashChangeValue(int value) {
