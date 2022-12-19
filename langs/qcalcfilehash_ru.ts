@@ -50,18 +50,18 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="43"/>
-        <source>GOST-R 34.11-94</source>
-        <translation>ГОСТ-Р 34.11-94</translation>
+        <source>GOST R 34.11-94</source>
+        <translation> ГОСТ Р 34.11-94</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="44"/>
-        <source>GOST-R 34.11-2012 (256 bit)</source>
-        <translation>ГОСТ-Р 34.11-2012 (256 бит)</translation>
+        <source>GOST R 34.11-2012 (256 bit)</source>
+        <translation> ГОСТ Р 34.11-2012 (256 бит)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="45"/>
-        <source>GOST-R 34.11-2012 (512 bit)</source>
-        <translation>ГОСТ-Р 34.11-2012 (512 бит)</translation>
+        <source>GOST R 34.11-2012 (512 bit)</source>
+        <translation> ГОСТ Р 34.11-2012 (512 бит)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="83"/>

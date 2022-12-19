@@ -50,17 +50,17 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="43"/>
-        <source>GOST-R 34.11-94</source>
+        <source>GOST R 34.11-94</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="44"/>
-        <source>GOST-R 34.11-2012 (256 bit)</source>
+        <source>GOST R 34.11-2012 (256 bit)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="45"/>
-        <source>GOST-R 34.11-2012 (512 bit)</source>
+        <source>GOST R 34.11-2012 (512 bit)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
