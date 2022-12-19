@@ -135,7 +135,15 @@ void MainWindow::calcHash(){
 
 
 void MainWindow::resultCompare(){
-    if (ui->textEdit->toPlainText().toUpper()==ui->lineEdit->text().toUpper()){
+	QString ourhash = ui->textEdit->toPlainText();
+	QString userhash = ui->lineEdit->text();
+	// if there is nothing to compare
+	if ( QString::compare(ourhash, "", Qt::CaseInsensitive) == 0 ||
+	     QString::compare(userhash, "", Qt::CaseInsensitive) == 0 ) {
+	    ui->label_6->setText("");
+	    return;
+	}
+    if (QString::compare(ourhash, userhash, Qt::CaseInsensitive) == 0) {
         ui->label_6->setText("<font color=\"#005500\">"+tr("equally")+"</font>");
     }else{
         ui->label_6->setText("<font color=\"#ff0000\">"+tr("different")+"</font>");
