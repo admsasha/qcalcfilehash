@@ -24,7 +24,7 @@ void ObjectConsole::calcHash(QStringList listPositionalArguments,bool showProgre
 
     if (listPositionalArguments.size()!=2){
         qCritical("%s",qUtf8Printable(tr("Invalid positional arguments")));
-        exit(0);
+        exit(1);
     }
 
     QString filename = listPositionalArguments.at(0);
@@ -61,7 +61,7 @@ void ObjectConsole::calcHash(QStringList listPositionalArguments,bool showProgre
         hash=HASH_ALGORITHM::md_gost12_512;
     }else{
         qCritical("%s",qUtf8Printable(tr("Invalid hash argument")));
-        exit(0);
+        exit(2);
     }
 
     qInfo(qUtf8Printable(tr("Filename: %s")),qUtf8Printable(filename));
