@@ -1,6 +1,6 @@
 Summary:	Hash calculator
 Name:		qcalcfilehash
-Version:	1.1.0
+Version:	1.1.1
 Release:	alt1
 License:	GPLv3+
 Group:		File tools
@@ -35,6 +35,9 @@ and also GOST R 34.11-94, GOST R 34-11-2012 (Streebog) 256 and 512 bit).
 %{_iconsdir}/hicolor/*/apps/%{name}.png
 
 %changelog
+* Mon Dec 19 2022 Alexander Danilov  <admsasha@altlinux.org> 1.1.1-alt1
+- release 1.1.1
+
 * Mon Dec 19 2022 Alexander Danilov  <admsasha@altlinux.org> 1.1.0-alt1
 - release 1.1.0
 - added GOST algorithms
