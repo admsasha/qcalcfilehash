@@ -22,7 +22,6 @@ MainWindow::MainWindow(QWidget *parent, int gostSupport) :
 
     changeShowCompareForm();
     ui->label_6->setText("");
-    ui->label_4->setText(tr("Copyright 2017-2022 DanSoft.")+tr("All rights reserved."));
 
     connect(ui->pushButton,SIGNAL(clicked(bool)),this,SLOT(close()));
     connect(ui->pushButton_2,SIGNAL(clicked(bool)),this,SLOT(openfile()));

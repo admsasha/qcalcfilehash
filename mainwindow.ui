@@ -146,7 +146,7 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="text">
-       <string notr="true">Copyright 2017-2020 DanSoft. All rights reserved.</string>
+       <string>Copyright 2017-2022 DanSoft. All rights reserved.</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>

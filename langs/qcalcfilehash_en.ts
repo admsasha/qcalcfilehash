@@ -34,52 +34,47 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../mainwindow.ui" line="149"/>
+        <source>Copyright 2017-2022 DanSoft. All rights reserved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../mainwindow.ui" line="172"/>
         <source>Compare the hash</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="25"/>
-        <source>All rights reserved.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="25"/>
-        <source>Copyright 2017-2022 DanSoft.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="43"/>
+        <location filename="../mainwindow.cpp" line="42"/>
         <source>GOST R 34.11-94</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="44"/>
+        <location filename="../mainwindow.cpp" line="43"/>
         <source>GOST R 34.11-2012 (256 bit)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="45"/>
+        <location filename="../mainwindow.cpp" line="44"/>
         <source>GOST R 34.11-2012 (512 bit)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="83"/>
+        <location filename="../mainwindow.cpp" line="82"/>
         <source>Open file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="83"/>
+        <location filename="../mainwindow.cpp" line="82"/>
         <source>All Files (*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="139"/>
+        <location filename="../mainwindow.cpp" line="146"/>
         <source>equally</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="141"/>
+        <location filename="../mainwindow.cpp" line="148"/>
         <source>different</source>
         <translation type="unfinished"></translation>
     </message>
