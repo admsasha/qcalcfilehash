@@ -75,9 +75,15 @@ int main(int argc, char *argv[]){
         app.installTranslator(&qtTranslator);
         app.installTranslator(&translator);
 
+        QString description = QObject::tr("Calculator hash: ")+"SHA1, SHA-224, SHA-256, SHA-384, SHA-512, MD5, CRC32, CRC8";
+        if (gostSupport){
+            description+=",\n\t "+QObject::tr("GOST R 34.11-94")+", "+QObject::tr("GOST R 34.11-2012 (256 bit)")+", "+QObject::tr("GOST R 34.11-2012 (512 bit)")+"";
+        }
+        description+"";
+
 
         QCommandLineParser parser;
-        parser.setApplicationDescription("Calculator hash (SHA1, SHA-224, SHA-256, SHA-384, SHA-512, MD5, CRC32, CRC8)");
+        parser.setApplicationDescription(description);
         parser.addHelpOption();
         parser.addVersionOption();
         parser.addPositionalArgument("filename", QCoreApplication::tr("Source file to hash"));

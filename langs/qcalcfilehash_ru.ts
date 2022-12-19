@@ -59,22 +59,22 @@
         <translation>ГОСТ Р 34.11-2012 (512 бит)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="82"/>
+        <location filename="../mainwindow.cpp" line="89"/>
         <source>Open file</source>
         <translation>Открыть файл</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="82"/>
+        <location filename="../mainwindow.cpp" line="89"/>
         <source>All Files (*)</source>
         <translation>Все файлы (*)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="146"/>
+        <location filename="../mainwindow.cpp" line="156"/>
         <source>equally</source>
         <translation>одинаковый</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="148"/>
+        <location filename="../mainwindow.cpp" line="158"/>
         <source>different</source>
         <translation>разный</translation>
     </message>
@@ -125,46 +125,69 @@
 <context>
     <name>QCoreApplication</name>
     <message>
-        <location filename="../main.cpp" line="83"/>
+        <location filename="../main.cpp" line="89"/>
         <source>Source file to hash</source>
         <oldsource>Source file to hash.</oldsource>
         <translation>Исходный файл для хеширования</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="84"/>
+        <location filename="../main.cpp" line="90"/>
         <source>Hash algorithm</source>
         <oldsource>Hash algorithm.</oldsource>
         <translation>Хеш-алгоритм</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
+        <location filename="../main.cpp" line="93"/>
         <source>hash comparison</source>
         <translation>Хеш для сравнения</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="88"/>
+        <location filename="../main.cpp" line="94"/>
         <source>hash</source>
         <translation>Хеш</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="92"/>
+        <location filename="../main.cpp" line="98"/>
         <source>Show progress</source>
         <translation>Показывать процесс</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="95"/>
+        <location filename="../main.cpp" line="101"/>
         <source>Show list all hash algorithm</source>
         <oldsource>Show list all hash algorithm.</oldsource>
         <translation>Вывести все хеш-алгоритмы</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="98"/>
+        <location filename="../main.cpp" line="104"/>
         <source>Open in gui</source>
         <translation>Открыть в GUI</translation>
     </message>
     <message>
         <source>Result: </source>
         <translation type="obsolete">Результат: </translation>
+    </message>
+</context>
+<context>
+    <name>QObject</name>
+    <message>
+        <location filename="../main.cpp" line="78"/>
+        <source>Calculator hash: </source>
+        <translation>Калькулятор хешей: </translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="80"/>
+        <source>GOST R 34.11-94</source>
+        <translation>ГОСТ Р 34.11-94</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="80"/>
+        <source>GOST R 34.11-2012 (256 bit)</source>
+        <translation>ГОСТ Р 34.11-2012 (256 бит)</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="80"/>
+        <source>GOST R 34.11-2012 (512 bit)</source>
+        <translation>ГОСТ Р 34.11-2012 (512 бит)</translation>
     </message>
 </context>
 </TS>

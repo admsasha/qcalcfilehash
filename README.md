@@ -1,5 +1,6 @@
 # README #
-Calculator hash (SHA1, SHA-224, SHA-256, SHA-384, SHA-512, MD5, CRC32, CRC8)
+Calculator hash: SHA1, SHA-224, SHA-256, SHA-384, SHA-512, MD5, CRC32, CRC8
+and also GOST R 34.11-94, GOST R 34.11-2012 (256 bit), GOST R 34.11-2012 (512 bit) when the gost engine is installed
 
 This program is licensed under the terms and conditions of
 the GNU General Public License (GPLv3+); either version
