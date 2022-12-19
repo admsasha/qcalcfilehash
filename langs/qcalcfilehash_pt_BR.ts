@@ -39,32 +39,47 @@
         <translation>Comparar hash</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="24"/>
-        <source>Copyright 2017-2020 DanSoft.</source>
-        <translation>Copyright 2017-2020 DanSoft.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="24"/>
+        <location filename="../mainwindow.cpp" line="25"/>
         <source>All rights reserved.</source>
         <translation>Todos os direitos reservados.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="77"/>
+        <location filename="../mainwindow.cpp" line="25"/>
+        <source>Copyright 2017-2022 DanSoft.</source>
+        <translation type="unfinished">Copyright 2017-2022 DanSoft.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="43"/>
+        <source>GOST-R 34.11-94</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="44"/>
+        <source>GOST-R 34.11-2012 (256 bit)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="45"/>
+        <source>GOST-R 34.11-2012 (512 bit)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="83"/>
         <source>Open file</source>
         <translation>Abrir arquivo</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="77"/>
+        <location filename="../mainwindow.cpp" line="83"/>
         <source>All Files (*)</source>
         <translation>Todos os Arquivos (*)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="133"/>
+        <location filename="../mainwindow.cpp" line="139"/>
         <source>equally</source>
         <translation>igual</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="135"/>
+        <location filename="../mainwindow.cpp" line="141"/>
         <source>different</source>
         <translation>diferente</translation>
     </message>
@@ -76,17 +91,17 @@
 <context>
     <name>ObjectConsole</name>
     <message>
-        <location filename="../ObjectConsole.cpp" line="22"/>
+        <location filename="../ObjectConsole.cpp" line="26"/>
         <source>Invalid positional arguments</source>
         <translation>Argumentos posicionais inválidos</translation>
     </message>
     <message>
-        <location filename="../ObjectConsole.cpp" line="53"/>
+        <location filename="../ObjectConsole.cpp" line="63"/>
         <source>Invalid hash argument</source>
         <translation>Argumento de hash inválido</translation>
     </message>
     <message>
-        <location filename="../ObjectConsole.cpp" line="57"/>
+        <location filename="../ObjectConsole.cpp" line="67"/>
         <source>Filename: %s</source>
         <translation>Arquivo: %s</translation>
     </message>
@@ -95,23 +110,23 @@
         <translation type="vanished">Результат: </translation>
     </message>
     <message>
-        <location filename="../ObjectConsole.cpp" line="91"/>
-        <location filename="../ObjectConsole.cpp" line="93"/>
+        <location filename="../ObjectConsole.cpp" line="101"/>
+        <location filename="../ObjectConsole.cpp" line="103"/>
         <source>Check: %s</source>
         <translation>Verificação: %s</translation>
     </message>
     <message>
-        <location filename="../ObjectConsole.cpp" line="91"/>
+        <location filename="../ObjectConsole.cpp" line="101"/>
         <source>equally</source>
         <translation>igual</translation>
     </message>
     <message>
-        <location filename="../ObjectConsole.cpp" line="93"/>
+        <location filename="../ObjectConsole.cpp" line="103"/>
         <source>different</source>
         <translation>diferente</translation>
     </message>
     <message>
-        <location filename="../ObjectConsole.cpp" line="87"/>
+        <location filename="../ObjectConsole.cpp" line="97"/>
         <source>Result: %s</source>
         <translation>Resultado: %s</translation>
     </message>
@@ -119,46 +134,42 @@
 <context>
     <name>QCoreApplication</name>
     <message>
-        <location filename="../main.cpp" line="54"/>
+        <location filename="../main.cpp" line="83"/>
         <source>Source file to hash</source>
         <oldsource>Source file to hash.</oldsource>
         <translation>Arquivo origem para hash</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="55"/>
+        <location filename="../main.cpp" line="84"/>
         <source>Hash algorithm</source>
         <oldsource>Hash algorithm.</oldsource>
         <translation>Algoritmo de hash</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="58"/>
+        <location filename="../main.cpp" line="87"/>
         <source>hash comparison</source>
         <translation>Hash para comparação</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="59"/>
+        <location filename="../main.cpp" line="88"/>
         <source>hash</source>
         <translation>hash</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="63"/>
+        <location filename="../main.cpp" line="92"/>
         <source>Show progress</source>
         <translation>Mostrar progresso</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="66"/>
+        <location filename="../main.cpp" line="95"/>
         <source>Show list all hash algorithm</source>
         <oldsource>Show list all hash algorithm.</oldsource>
         <translation>Mostra lista de todos os algoritmos de hash</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="69"/>
+        <location filename="../main.cpp" line="98"/>
         <source>Open in gui</source>
         <translation>Abrir na GUI</translation>
-    </message>
-    <message>
-        <source>Result: </source>
-        <translation type="obsolete">Результат: </translation>
     </message>
 </context>
 </TS>

@@ -42,7 +42,7 @@ MainWindow::MainWindow(QWidget *parent, int gostSupport) :
     if (gostSupport){
         ui->comboBox->addItem(tr("GOST-R 34.11-94"),static_cast<int>(HASH_ALGORITHM::md_gost94));
         ui->comboBox->addItem(tr("GOST-R 34.11-2012 (256 bit)"),static_cast<int>(HASH_ALGORITHM::md_gost12_256));
-        ui->comboBox->addItem(tr("GOST-Р 34.11-2012 (512 bit)"),static_cast<int>(HASH_ALGORITHM::md_gost12_512));
+        ui->comboBox->addItem(tr("GOST-R 34.11-2012 (512 bit)"),static_cast<int>(HASH_ALGORITHM::md_gost12_512));
     }
     ui->comboBox->setCurrentIndex(0);
 
