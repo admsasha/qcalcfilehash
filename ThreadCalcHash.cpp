@@ -173,8 +173,7 @@ std::string ThreadCalcHash::opensslEvp(const std::string &filename, const std::s
 
     md = EVP_get_digestbyname(digest.c_str());
     if (md == NULL) {
-        printf("Unknown message digest %s\n", digest.c_str());
-        exit(1);
+        return "Unknown message digest "+digest;
     }
 
     std::ifstream file(filename, std::ios_base::binary);

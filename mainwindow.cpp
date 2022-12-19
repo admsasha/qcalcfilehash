@@ -40,9 +40,9 @@ MainWindow::MainWindow(QWidget *parent, int gostSupport) :
     ui->comboBox->addItem("SHA-384",static_cast<int>(HASH_ALGORITHM::Sha384));
     ui->comboBox->addItem("SHA-512",static_cast<int>(HASH_ALGORITHM::Sha512));
     if (gostSupport){
-        ui->comboBox->addItem("md_gost94",static_cast<int>(HASH_ALGORITHM::md_gost94));
-        ui->comboBox->addItem("md_gost12_256",static_cast<int>(HASH_ALGORITHM::md_gost12_256));
-        ui->comboBox->addItem("md_gost12_512",static_cast<int>(HASH_ALGORITHM::md_gost12_512));
+        ui->comboBox->addItem(tr("GOST-R 34.11-94"),static_cast<int>(HASH_ALGORITHM::md_gost94));
+        ui->comboBox->addItem(tr("GOST-R 34.11-2012 (256 bit)"),static_cast<int>(HASH_ALGORITHM::md_gost12_256));
+        ui->comboBox->addItem(tr("GOST-Р 34.11-2012 (512 bit)"),static_cast<int>(HASH_ALGORITHM::md_gost12_512));
     }
     ui->comboBox->setCurrentIndex(0);
 
