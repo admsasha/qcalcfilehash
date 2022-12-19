@@ -12,8 +12,6 @@ BuildRequires:	pkgconfig(openssl)
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5Gui)
 BuildRequires:	pkgconfig(Qt5Widgets)
-# supports GOST hashes if it is installed
-Recommends:	openssl-gost-engine
 
 %description
 Hash calculator (SHA1, SHA-224, SHA-256, SHA-384, SHA-512, MD5, CRC32, CRC8
