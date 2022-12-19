@@ -67,6 +67,13 @@ void MainWindow::setFilename(QString filename){
 
 void MainWindow::setHash(QString hashName){
     for (int i=0;i<ui->comboBox->count();i++){
+        if ((hashName=="md_gost94" and ui->comboBox->itemData(i).toInt()==static_cast<int>(HASH_ALGORITHM::md_gost94)) or
+            (hashName=="md_gost12_256" and ui->comboBox->itemData(i).toInt()==static_cast<int>(HASH_ALGORITHM::md_gost12_256)) or
+            (hashName=="md_gost12_512" and ui->comboBox->itemData(i).toInt()==static_cast<int>(HASH_ALGORITHM::md_gost12_512))
+        ){
+            ui->comboBox->setCurrentIndex(i);
+            return;
+        }
         if (ui->comboBox->itemText(i).toLower()==hashName.toLower()){
             ui->comboBox->setCurrentIndex(i);
             return;
