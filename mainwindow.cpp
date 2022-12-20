@@ -7,6 +7,7 @@
 #include <QDebug>
 #include <QScreen>
 #include <QTimer>
+#include <QMimeData>
 
 #include "ThreadCalcHash.h"
 #include "version.h"
@@ -49,6 +50,8 @@ MainWindow::MainWindow(QWidget *parent, int gostSupport) :
     ui->progressBar->setValue(0);
     ui->progressBar->setEnabled(false);
 
+    setAcceptDrops(true);
+
     QTimer::singleShot(100,[&](){
         // move to center
         this->move((qApp->primaryScreen()->size().width()-this->width())/2,(qApp->primaryScreen()->size().height()-this->height())/2);
@@ -63,6 +66,9 @@ MainWindow::~MainWindow()
 void MainWindow::setFilename(QString filename){
     ui->label->setText(filename);
     _filename=filename;
+
+    ui->textEdit->setText("");
+    resultCompare();
 }
 
 void MainWindow::setHash(QString hashName){
@@ -85,15 +91,25 @@ void MainWindow::startCalc(){
     emit calcHash();
 }
 
+void MainWindow::dragEnterEvent(QDragEnterEvent *event){
+    if (event->mimeData()->hasUrls()) {
+        event->accept();
+    }
+}
+
+void MainWindow::dropEvent(QDropEvent *event){
+    const QMimeData* mimeData = event->mimeData();
+
+    if (mimeData->hasUrls() and mimeData->urls().size()>0){
+        setFilename(mimeData->urls().at(0).toLocalFile());
+    }
+}
+
 void MainWindow::openfile(){
     QString fileName = QFileDialog::getOpenFileName(this,tr("Open file"), "", tr("All Files (*)"));
     if (fileName.size() <= 0) return;
 
-    ui->label->setText(fileName);
-    _filename=fileName;
-
-    ui->textEdit->setText("");
-    resultCompare();
+    setFilename(fileName);
 }
 
 void MainWindow::calcHashChangeValue(int value) {

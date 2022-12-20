@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QDropEvent>
 
 namespace Ui {
     class MainWindow;
@@ -17,6 +18,10 @@ class MainWindow : public QMainWindow {
         void setHash(QString hashName);
         void startCalc();
 
+    protected:
+        void dragEnterEvent(QDragEnterEvent *event) override;
+        void dropEvent(QDropEvent* event) override;
+
     private:
         Ui::MainWindow *ui;
 
@@ -24,6 +29,7 @@ class MainWindow : public QMainWindow {
         int _gostSupport;
 
         int oldValueProcHash;
+
 
     private slots:
         void calcHash();
